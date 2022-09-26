@@ -17,3 +17,6 @@ Untuk dapat mengetahui bagaimana cara menggunakan GIT, berikut ini beberapa peri
 - GIT checkout ini dapat menukar branch yang aktif dengan branch yang telah dipilih. 
 - GIT merge ini untuk menggabungkan branch yang aktif dan yang telah dipilih. 
 - GIT clone ini dapat membuat salinan repository lokal. 
+
+- GitHub
+GitHub merupakan manajemen project, sistem versioning code, sekaligus platform jaringan sosial bagi para developer seluruh dunia.
