@@ -45,11 +45,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
     <script src="{{ asset('js/jquery.inputmask.bundle.min.js') }}"></script>
-    <link href="{{ asset('src/css/mk-notifications.css')}}" rel="stylesheet">
-    <script src="{{ asset('src/js/mk-notifications.js')}}"></script>
+    <link href="{{ asset('src/css/mk-notifications.css') }}" rel="stylesheet">
+    <script src="{{ asset('src/js/mk-notifications.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     @yield('scripts')
-    @include('alert.mk-notif')
+    {{-- @include('alert.mk-notif') --}}
     <script>
          $('#link').click(function(){
             window.location = $(this).data('href');
