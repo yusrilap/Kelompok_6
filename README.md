@@ -2,7 +2,7 @@ Aplikasi Sistem Absensi Karyawan Absensi Menggunakan Framework Laravel 8.*
 
 Untuk menjalankan Aplikasi ini silahkan jalankan perintah berikut pada command promt / CMD / Git CMD anda
 
-##Usage
+## Usage
 
 - Run `composer install`
 - Run `copy .env.example .env`
@@ -13,3 +13,8 @@ Untuk menjalankan Aplikasi ini silahkan jalankan perintah berikut pada command p
 - Run `php artisan storage:links`
 - Run `php artisan serve`
 - Done. :)
+
+## Akun
+- email     : admin@gmail.com
+- username  : admin
+- password  : admin 
