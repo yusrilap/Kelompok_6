@@ -14,8 +14,8 @@
                                     <span><i class="fa fa-search"></i> </span>
                                 </div>
                             </div>
-                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
-                        </div> 
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search">
+                        </div>
                         <a href="{{ route('master.staff.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fas fa-user-plus fa-fw"></i> Tambah
                         </a>
@@ -23,7 +23,7 @@
                 </form>
             </div>
         </div>
-    
+
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
@@ -36,15 +36,15 @@
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width: 100px;">#</th> 
+                                        <th class="text-center" style="width: 100px;">#</th>
                                         <th>Nama</th>
                                         <th>Tgl. Lahir</th>
                                         <th>Alamat</th>
                                         <th>No. Telpon</th>
                                         <th>Position</th>
-                                        <th>Departement</th>
+                                        <th>Prodi</th>
                                     </tr>
-                                </thead> 
+                                </thead>
                                 <tbody>
                                     @foreach ($staff as $item)
                                         <tr id="hide{{ $item->id }}">
@@ -62,15 +62,15 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{ $item->name ?? '' }}</td> 
-                                            <td>{{ $item->birth ?? '' }}</td> 
-                                            <td>{{ $item->addres ?? '' }}</td> 
-                                            <td>{{ $item->phone ?? '' }}</td> 
+                                            <td>{{ $item->name ?? '' }}</td>
+                                            <td>{{ $item->birth ?? '' }}</td>
+                                            <td>{{ $item->addres ?? '' }}</td>
+                                            <td>{{ $item->phone ?? '' }}</td>
                                             <td style="line-height: 1">
                                                 {{ $item->position->name ?? '' }} <br>
                                                 <small><span class="badge {{ $item->position->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->position->status ?? '' }}</span></small>
-                                            </td> 
-                                            <td>{{ $item->departement->name ?? '' }}</td> 
+                                            </td>
+                                            <td>{{ $item->departement->name ?? '' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -119,7 +119,7 @@
                             $("#hide"+id).hide(300);
                         }
                     });
-                    
+
                 }else{
                     swal("Canceled", "Anda Membatalkan! :)","error");
                 }

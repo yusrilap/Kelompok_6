@@ -14,8 +14,8 @@
                                     <span><i class="fa fa-search"></i> </span>
                                 </div>
                             </div>
-                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
-                        </div> 
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search">
+                        </div>
                         <a href="{{ route('master.departement.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fas fa-user-plus fa-fw"></i> Tambah
                         </a>
@@ -23,23 +23,23 @@
                 </form>
             </div>
         </div>
-    
+
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Departement
+                                Data Prodi
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width: 100px;">#</th> 
-                                        <th>Nama</th> 
+                                        <th class="text-center" style="width: 100px;">#</th>
+                                        <th>Nama</th>
                                     </tr>
-                                </thead> 
+                                </thead>
                                 <tbody>
                                     @foreach ($departement as $item)
                                         <tr id="hide{{ $item->id }}">
@@ -57,7 +57,7 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{ $item->name ?? '' }}</td> 
+                                            <td>{{ $item->name ?? '' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -106,7 +106,7 @@
                             $("#hide"+id).hide(300);
                         }
                     });
-                    
+
                 }else{
                     swal("Canceled", "Anda Membatalkan! :)","error");
                 }

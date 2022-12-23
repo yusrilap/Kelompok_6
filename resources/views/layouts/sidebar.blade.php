@@ -35,19 +35,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('master.position.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Position</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('master.departement.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-circle-o"></i>
-                                <p>Departement</p>
+                                <p>Prodi</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('master.staff.index') }}" class="nav-link">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Staff</p>
                             </a>
