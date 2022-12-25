@@ -43,5 +43,36 @@ Route::middleware('auth')->group(function(){
         Route::patch('/roles/{roles}/update', 'RolesController@update')->name('roles.update');
         Route::get('/roles/{id}', 'RolesController@destroy')->name('roles.destroy');
     });
+});
+
+    Route::middleware('role:admin|accounting|supervisor')->group(function(){
+        Route::namespace('Master')->prefix('master')->name('master.')->group(function(){
+            Route::get('position', 'PositionController@index')->name('position.index');
+            Route::middleware('role:admin|accounting')->group(function(){
+                Route::get('position/create', 'PositionController@create')->name('position.create');
+                Route::post('position', 'PositionController@store')->name('position.store');
+                Route::get('position/{position}/edit', 'PositionController@edit')->name('position.edit');
+                Route::patch('position/{position}/update', 'PositionController@update')->name('position.update');
+                Route::get('position/{id}', 'PositionController@destroy')->name('position.destroy');
+            });
+
+            Route::get('departement', 'DepartementController@index')->name('departement.index');
+            Route::get('staff', 'StaffController@index')->name('staff.index');
+            Route::middleware('role:admin|accounting')->group(function(){
+                Route::get('departement/create', 'DepartementController@create')->name('departement.create');
+                Route::post('departement', 'DepartementController@store')->name('departement.store');
+                Route::get('departement/{departement}/edit', 'DepartementController@edit')->name('departement.edit');
+                Route::patch('departement/{departement}/update', 'DepartementController@update')->name('departement.update');
+                Route::get('departement/{id}', 'DepartementController@destroy')->name('departement.destroy');
+
+                Route::get('staff/create', 'StaffController@create')->name('staff.create');
+                Route::post('staff', 'StaffController@store')->name('staff.store');
+                Route::get('staff/{staff}/edit', 'StaffController@edit')->name('staff.edit');
+                Route::patch('staff/{staff}/update', 'StaffController@update')->name('staff.update');
+                Route::get('staff/{id}', 'StaffController@destroy')->name('staff.destroy');
+            });
+        });
 
     });
+
+

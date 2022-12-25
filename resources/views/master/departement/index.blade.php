@@ -14,8 +14,13 @@
                                     <span><i class="fa fa-search"></i> </span>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
+=======
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search">
+                        </div>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                         <a href="{{ route('master.departement.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fas fa-user-plus fa-fw"></i> Tambah
                         </a>
@@ -23,23 +28,38 @@
                 </form>
             </div>
         </div>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
+<<<<<<< HEAD
                                 Data Departement
+=======
+                                Data Prodi
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
+<<<<<<< HEAD
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama</th> 
                                     </tr>
                                 </thead> 
+=======
+                                        <th class="text-center" style="width: 100px;">#</th>
+                                        <th>Nama</th>
+                                    </tr>
+                                </thead>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                 <tbody>
                                     @foreach ($departement as $item)
                                         <tr id="hide{{ $item->id }}">
@@ -57,7 +77,11 @@
                                                     </a>
                                                 </div>
                                             </td>
+<<<<<<< HEAD
                                             <td>{{ $item->name ?? '' }}</td> 
+=======
+                                            <td>{{ $item->name ?? '' }}</td>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -106,7 +130,11 @@
                             $("#hide"+id).hide(300);
                         }
                     });
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                 }else{
                     swal("Canceled", "Anda Membatalkan! :)","error");
                 }

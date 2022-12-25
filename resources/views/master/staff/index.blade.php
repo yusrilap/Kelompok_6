@@ -14,8 +14,13 @@
                                     <span><i class="fa fa-search"></i> </span>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
+=======
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search">
+                        </div>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                         <a href="{{ route('master.staff.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fas fa-user-plus fa-fw"></i> Tambah
                         </a>
@@ -23,7 +28,11 @@
                 </form>
             </div>
         </div>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
@@ -36,15 +45,25 @@
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
+<<<<<<< HEAD
                                         <th class="text-center" style="width: 100px;">#</th> 
+=======
+                                        <th class="text-center" style="width: 100px;">#</th>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                         <th>Nama</th>
                                         <th>Tgl. Lahir</th>
                                         <th>Alamat</th>
                                         <th>No. Telpon</th>
                                         <th>Position</th>
+<<<<<<< HEAD
                                         <th>Departement</th>
                                     </tr>
                                 </thead> 
+=======
+                                        <th>Prodi</th>
+                                    </tr>
+                                </thead>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                 <tbody>
                                     @foreach ($staff as $item)
                                         <tr id="hide{{ $item->id }}">
@@ -62,6 +81,7 @@
                                                     </a>
                                                 </div>
                                             </td>
+<<<<<<< HEAD
                                             <td>{{ $item->name ?? '' }}</td> 
                                             <td>{{ $item->birth ?? '' }}</td> 
                                             <td>{{ $item->addres ?? '' }}</td> 
@@ -71,6 +91,17 @@
                                                 <small><span class="badge {{ $item->position->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->position->status ?? '' }}</span></small>
                                             </td> 
                                             <td>{{ $item->departement->name ?? '' }}</td> 
+=======
+                                            <td>{{ $item->name ?? '' }}</td>
+                                            <td>{{ $item->birth ?? '' }}</td>
+                                            <td>{{ $item->addres ?? '' }}</td>
+                                            <td>{{ $item->phone ?? '' }}</td>
+                                            <td style="line-height: 1">
+                                                {{ $item->position->name ?? '' }} <br>
+                                                <small><span class="badge {{ $item->position->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->position->status ?? '' }}</span></small>
+                                            </td>
+                                            <td>{{ $item->departement->name ?? '' }}</td>
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -119,7 +150,11 @@
                             $("#hide"+id).hide(300);
                         }
                     });
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
                 }else{
                     swal("Canceled", "Anda Membatalkan! :)","error");
                 }
