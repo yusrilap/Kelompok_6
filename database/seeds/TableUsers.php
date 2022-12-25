@@ -17,15 +17,15 @@ class TableUsers extends Seeder
             'username'  => 'admin',
             'password'  => bcrypt('admin'),
         ]);
-        
+
         Staff::create([
             'users_id' => $user->id,
             'position_id' => 1,
             'departement_id' => 1,
-            'name' => 'Tasrin Adiputra',
+            'name' => 'Yusril Azhar Permana',
             'birth' => date('Y-m-d'),
             'startdate' => date('Y-m-d'),
-            'addres' => 'Makassar',
+            'addres' => 'Cianjur',
             'addres' => null,
         ]);
     }
