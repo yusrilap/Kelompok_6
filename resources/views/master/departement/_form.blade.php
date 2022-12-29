@@ -8,19 +8,11 @@
         </div>
     </div>
     <div class="card-header with-border pl-0 pb-1">
-<<<<<<< HEAD
-        <span class="col-form-label text-bold">Departement</span>
-    </div>
-    <br> 
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Nama <span class="text-danger">*</span></label> 
-=======
         <span class="col-form-label text-bold">Prodi</span>
     </div>
     <br>
     <div class="form-group row">
         <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Nama <span class="text-danger">*</span></label>
->>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
         <div class="col-12 col-md-5 col-lg-5">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $departement->name ?? '') }}" placeholder="Name.." autocomplete="off">
             @error('name')
@@ -28,11 +20,7 @@
                     <strong>{{ $errors->first('name') }}</strong>
                 </span>
             @enderror
-<<<<<<< HEAD
-        </div> 
-=======
         </div>
->>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
     </div>
 </div>
 <div class="card-footer">
