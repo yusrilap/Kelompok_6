@@ -26,16 +26,8 @@
 <div class="card-footer">
     <div class="offset-md-4">
         <div class="form-group mb-0">
-<<<<<<< HEAD
-            <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button> 
-            <button type="reset" class="btn btn-secondary"><i class="fas fa-undo mr-1"></i> Reset</button>
-        </div>
-    </div>
-</div>
-=======
             <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button>
             <button type="reset" class="btn btn-secondary"><i class="fas fa-undo mr-1"></i> Reset</button>
         </div>
     </div>
 </div>
->>>>>>> eac25688bdc2ea92d3b27f5789fb19260f184a2b
