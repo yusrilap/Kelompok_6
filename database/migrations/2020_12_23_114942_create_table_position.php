@@ -11,7 +11,7 @@ class CreateTablePosition extends Migration
         Schema::create('tb_position', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->enum('status', ['Staff', 'Daily Worker']);
+            $table->enum('status', ['Staff', 'Dosen']);
             $table->double('salary')->default(0);
             $table->timestamps();
         });
