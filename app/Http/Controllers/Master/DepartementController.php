@@ -41,4 +41,10 @@ class DepartementController extends Controller
         ];  
         return redirect()->route('master.departement.index')->with($message);
     }
+        public function edit(Departement $departement)
+    {
+        $data['title'] = 'Edit Departement';
+        $data['departement'] = $departement;
+        return view('master.departement.edit', $data);       
+    }
 }
