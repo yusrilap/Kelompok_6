@@ -47,4 +47,14 @@ class DepartementController extends Controller
         $data['departement'] = $departement;
         return view('master.departement.edit', $data);       
     }
+        public function update(Request $request, Departement $departement)
+    {
+        $request->merge([
+            'salary' => preg_replace('/\D/', '', $request->salary),
+        ]);
+
+        $request->validate([
+            'name'=>'required|max:100',
+        ]);
+    }
 }
