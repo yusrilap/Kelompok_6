@@ -13,9 +13,9 @@ class TablePosition extends Seeder
             ['name'=>'Koordinator TA', 'status'=>'Staff', 'salary'=>3500000],
             ['name'=>'Koordinator KP', 'status'=>'Staff', 'salary'=>3500000],
             ['name'=>'Koordinator LAB', 'status'=>'Staff', 'salary'=>3500000],
-            ['name'=>'Dosen Tetap', 'status'=>'Staff', 'salary'=>3500000],
-            ['name'=>'Dosen Tidak Tetap', 'status'=>'Staff', 'salary'=>3500000],
-            ['name'=>'Staf Prodi', 'status'=>'Staff', 'salary'=>3500000],
+            ['name'=>'Dosen Tetap', 'status'=>'Dosen', 'salary'=>3500000],
+            ['name'=>'Dosen Tidak Tetap', 'status'=>'Dosen', 'salary'=>3500000],
+            ['name'=>'Staff Prodi', 'status'=>'Staff', 'salary'=>3500000],
 
         ];
         foreach($position as $row)

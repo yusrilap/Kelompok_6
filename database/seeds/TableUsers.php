@@ -17,9 +17,10 @@ class TableUsers extends Seeder
             'username'  => 'admin',
             'password'  => bcrypt('admin'),
         ]);
+        
         Staff::create([
             'users_id' => $user->id,
-            'position_id' => 1,
+            'position_id' => 2,
             'departement_id' => 1,
             'name' => 'Yusril Azhar Permana',
             'birth' => date('Y-m-d'),
