@@ -59,7 +59,16 @@ class StaffController extends Controller
             ]);
             $request->request->add(['users_id' => $user->id]);
         }
+
+        Staff::create($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data staff created successfully'
+        ];  
+        return redirect()->route('master.staff.index')->with($message);
     }
+    
 
 
 
