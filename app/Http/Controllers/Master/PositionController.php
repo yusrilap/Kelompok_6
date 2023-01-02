@@ -72,8 +72,23 @@ class PositionController extends Controller
 
     // TAMBAH DATA
 
-    public function destroy()
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->id;
+        if($id)
+        {   
+            $position = Position::find($id);
+            if($position)
+            {
+                $position->delete();
+            }
+            $count = Position::count();
+            $message = [
+                'alert-type' => 'success',
+                'count' => $count,
+                'message' => 'Data position deleted successfully.'
+            ];
+            return response()->json($message);
+        }
     }
 }
