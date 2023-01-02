@@ -29,7 +29,7 @@ class StaffController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
         // dd($request->all());
         $request->validate([
             'name'=>'required|max:100',
@@ -40,7 +40,7 @@ class StaffController extends Controller
             'departement_id'=>'required',
             'addres'=>'required',
         ]);
-    
+
         if ($request->has('makeUserAccount')) {
             $msg = [
                 'username.min' => 'Username harus terdiri dari minimal 6 karakter.',
@@ -65,7 +65,7 @@ class StaffController extends Controller
         $message = [
             'alert-type'=>'success',
             'message'=> 'Data staff created successfully'
-        ];  
+        ];
         return redirect()->route('master.staff.index')->with($message);
     }
 
@@ -76,9 +76,9 @@ class StaffController extends Controller
         $data['position'] = Position::all();
         $data['departement'] = Departement::all();
         $data['roles'] = Roles::all();
-        return view('master.staff.edit', $data);       
+        return view('master.staff.edit', $data);
     }
-    
+
     public function update(Request $request, Staff $staff)
     {
         $request->validate([
@@ -115,7 +115,7 @@ class StaffController extends Controller
         $message = [
             'alert-type'=>'success',
             'message'=> 'Data staff updated successfully'
-        ];  
+        ];
         return redirect()->route('master.staff.index')->with($message);
     }
 
@@ -123,7 +123,7 @@ class StaffController extends Controller
     {
         $id = $request->id;
         if($id)
-        {   
+        {
             $staff = Staff::find($id);
             if($staff)
             {
@@ -139,7 +139,7 @@ class StaffController extends Controller
         }
     }
 
-    
+
 
 
 
