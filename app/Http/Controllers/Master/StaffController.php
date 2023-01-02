@@ -119,6 +119,26 @@ class StaffController extends Controller
         return redirect()->route('master.staff.index')->with($message);
     }
 
+    public function destroy(Request $request)
+    {
+        $id = $request->id;
+        if($id)
+        {   
+            $staff = Staff::find($id);
+            if($staff)
+            {
+                $staff->delete();
+            }
+            $count = Staff::count();
+            $message = [
+                'alert-type' => 'success',
+                'count' => $count,
+                'message' => 'Data staff deleted successfully.'
+            ];
+            return response()->json($message);
+        }
+    }
+
     
 
 
