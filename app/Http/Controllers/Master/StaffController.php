@@ -19,14 +19,4 @@ class StaffController extends Controller
         return view('master.staff.index', $data);
     }
 
-    public function create()
-    {
-        $data['title'] = "Tambah Staff";
-        $data['position'] = Position::all();
-        $data['roles'] = Roles::all();
-        $data['departement'] = Departement::all();
-        return view('master.staff.create', $data);
-    }
-
-
 }
