@@ -56,5 +56,12 @@ class DepartementController extends Controller
         $request->validate([
             'name'=>'required|max:100',
         ]);
+                $departement->update($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data departement updated successfully'
+        ];  
+        return redirect()->route('master.departement.index')->with($message);
     }
 }
