@@ -109,7 +109,17 @@ class StaffController extends Controller
             ]);
             $request->request->add(['users_id' => $user->id]);
         }
+
+        $staff->update($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data staff updated successfully'
+        ];  
+        return redirect()->route('master.staff.index')->with($message);
     }
+
+    
 
 
 
