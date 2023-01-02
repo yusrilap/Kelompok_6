@@ -43,6 +43,12 @@ class PositionController extends Controller
         ];  
         return redirect()->route('master.position.index')->with($message);
     }
+        public function edit(Position $position)
+    {
+        $data['title'] = 'Edit Position';
+        $data['position'] = $position;
+        return view('master.position.edit', $data);       
+    }
 
 
     // TAMBAH DATA
