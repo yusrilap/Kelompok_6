@@ -22,4 +22,11 @@ class PositionController extends Controller
     {
         return view('master.position.create', ['title'=>'Tambah Position']);
     }
+
+    // TAMBAH DATA
+
+    public function destroy()
+    {
+        //
+    }
 }
