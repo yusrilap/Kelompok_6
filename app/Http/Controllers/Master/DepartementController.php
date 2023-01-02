@@ -19,6 +19,9 @@ class DepartementController extends Controller
         $data['count'] = Departement::count();
         return view('master.departement.index', $data);
     }
-
+    public function create()
+    {
+        return view('master.departement.create', ['title'=>'Tambah Departement']);
+    }
 
 }
