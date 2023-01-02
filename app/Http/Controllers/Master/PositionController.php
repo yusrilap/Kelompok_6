@@ -35,6 +35,16 @@ class PositionController extends Controller
             'status'=>'required'
         ]);
 
+        Position::create($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data position created successfully'
+        ];  
+        return redirect()->route('master.position.index')->with($message);
+    }
+
+
     // TAMBAH DATA
 
     public function destroy()
