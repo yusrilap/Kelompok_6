@@ -23,6 +23,28 @@ class PositionController extends Controller
         return view('master.position.create', ['title'=>'Tambah Position']);
     }
 
+    public function store(Request $request)
+    {   
+        $request->merge([
+            'salary' => preg_replace('/\D/', '', $request->salary),
+        ]);
+
+        $request->validate([
+            'name'=>'required',
+            'salary'=>'required|max:50|min:3',
+            'status'=>'required'
+        ]);
+
+        Position::create($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data position created successfully'
+        ];  
+        return redirect()->route('master.position.index')->with($message);
+    }
+
+
     // TAMBAH DATA
 
     public function destroy()
