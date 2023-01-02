@@ -64,4 +64,23 @@ class DepartementController extends Controller
         ];  
         return redirect()->route('master.departement.index')->with($message);
     }
+        public function destroy(Request $request)
+    {
+        $id = $request->id;
+        if($id)
+        {   
+            $departement = Departement::find($id);
+            if($departement)
+            {
+                $departement->delete();
+            }
+            $count = Departement::count();
+            $message = [
+                'alert-type' => 'success',
+                'count' => $count,
+                'message' => 'Data departement deleted successfully.'
+            ];
+            return response()->json($message);
+        }
+    }
 }
