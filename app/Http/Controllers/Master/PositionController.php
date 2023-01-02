@@ -49,7 +49,26 @@ class PositionController extends Controller
         $data['position'] = $position;
         return view('master.position.edit', $data);       
     }
+    public function update(Request $request, Position $position)
+    {
+        $request->merge([
+            'salary' => preg_replace('/\D/', '', $request->salary),
+        ]);
 
+        $request->validate([
+            'name'=>'required',
+            'salary'=>'required|max:50|min:3',
+            'status'=>'required'
+        ]);
+
+        $position->update($request->all());
+
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data position updated successfully'
+        ];  
+        return redirect()->route('master.position.index')->with($message);
+    }
 
     // TAMBAH DATA
 
