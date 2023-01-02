@@ -24,7 +24,7 @@ class DepartementController extends Controller
         return view('master.departement.create', ['title'=>'Tambah Departement']);
     }
     public function store(Request $request)
-    {   
+    {
         $request->merge([
             'salary' => preg_replace('/\D/', '', $request->salary),
         ]);
@@ -32,20 +32,20 @@ class DepartementController extends Controller
         $request->validate([
             'name'=>'required|max:100',
         ]);
-        
+
         Departement::create($request->all());
 
         $message = [
             'alert-type'=>'success',
             'message'=> 'Data departement created successfully'
-        ];  
+        ];
         return redirect()->route('master.departement.index')->with($message);
     }
         public function edit(Departement $departement)
     {
         $data['title'] = 'Edit Departement';
         $data['departement'] = $departement;
-        return view('master.departement.edit', $data);       
+        return view('master.departement.edit', $data);
     }
         public function update(Request $request, Departement $departement)
     {
@@ -61,14 +61,14 @@ class DepartementController extends Controller
         $message = [
             'alert-type'=>'success',
             'message'=> 'Data departement updated successfully'
-        ];  
+        ];
         return redirect()->route('master.departement.index')->with($message);
     }
         public function destroy(Request $request)
     {
         $id = $request->id;
         if($id)
-        {   
+        {
             $departement = Departement::find($id);
             if($departement)
             {
