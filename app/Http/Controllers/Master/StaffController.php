@@ -28,5 +28,19 @@ class StaffController extends Controller
         return view('master.staff.create', $data);
     }
 
+    public function store(Request $request)
+    {   
+        // dd($request->all());
+        $request->validate([
+            'name'=>'required|max:100',
+            'birth'=>'required|date',
+            'startdate'=>'required|date',
+            'phone'=>'required|max:13',
+            'position_id'=>'required',
+            'departement_id'=>'required',
+            'addres'=>'required',
+        ]);
+    }
+
 
 }
