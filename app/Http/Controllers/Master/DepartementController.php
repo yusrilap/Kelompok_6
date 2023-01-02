@@ -23,5 +23,14 @@ class DepartementController extends Controller
     {
         return view('master.departement.create', ['title'=>'Tambah Departement']);
     }
+    public function store(Request $request)
+    {   
+        $request->merge([
+            'salary' => preg_replace('/\D/', '', $request->salary),
+        ]);
 
+        $request->validate([
+            'name'=>'required|max:100',
+        ]);
+    }
 }
