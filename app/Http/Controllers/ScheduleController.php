@@ -16,45 +16,32 @@ class ScheduleController extends Controller
         return view('schedule.index', $data);
     }
 
+    public function create()
+    {
+        $data['title'] = "Buat Schedule";
+        $data['staff'] = Staff::all();
+        $value = new Keterangan();
+        $data['ket_schedule'] = $value->ket_schedule;
+        $data['status'] = $value->status;
+        return view('schedule.create', $data);
+    }
+
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
-            'name'=>'required|max:100',
-            'birth'=>'required|date',
-            'startdate'=>'required|date',
-            'phone'=>'required|max:13',
-            'position_id'=>'required',
-            'departement_id'=>'required',
-            'addres'=>'required',
+            'staff_id'=>'required|unique:tb_schedule',
+            'tgl_masuk'=>'required|date',
+            'ket_schedule'=>'required',
+            // 'status'=>'required',
         ]);
 
-        if ($request->has('makeUserAccount')) {
-            $msg = [
-                'username.min' => 'Username harus terdiri dari minimal 6 karakter.',
-                'username.unique' => 'Username sudah digunakan.'
-            ];
-            $request->validate([
-                'username' => 'required|string|min:6|max:255|unique:users',
-                'role_id' => 'required|integer',
-            ], $msg);
-
-            $user = Users::create([
-                'name' => $request->name,
-                'username' => $request->username,
-                'password' => bcrypt($request->username),
-                'role_id' => $request->role_id
-            ]);
-            $request->request->add(['users_id' => $user->id]);
-        }
-
-        Staff::create($request->all());
+        Schedule::create($request->all());
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data staff created successfully'
+            'message'=> 'Data schedule created successfully'
         ];
-        return redirect()->route('master.staff.index')->with($message);
+        return redirect()->route('schedule.index')->with($message);
     }
 
     public function edit(Staff $staff)
