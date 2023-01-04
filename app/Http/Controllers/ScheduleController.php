@@ -56,4 +56,14 @@ class ScheduleController extends Controller
         ];
         return redirect()->route('master.staff.index')->with($message);
     }
+
+    public function edit(Staff $staff)
+    {
+        $data['title'] = 'Edit Staff';
+        $data['staff'] = $staff;
+        $data['position'] = Position::all();
+        $data['departement'] = Departement::all();
+        $data['roles'] = Roles::all();
+        return view('master.staff.edit', $data);
+    }
 }
