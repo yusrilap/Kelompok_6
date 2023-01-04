@@ -26,7 +26,7 @@
                 </li>
                 @if (!Auth::user()->hasRole('karyawan'))
                 <li class="nav-item has-treeview {{ $page == 'master' ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link {{ $page == 'master' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-laptop"></i>
                         <p>
                             Master
@@ -35,19 +35,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('master.position.index') }}" class="nav-link">
+                            <a href="{{ route('master.position.index') }}" class="nav-link {{ $sub == 'position' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Position</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('master.departement.index') }}" class="nav-link">
+                            <a href="{{ route('master.departement.index') }}" class="nav-link {{ $sub == 'departement' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Prodi</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('master.staff.index') }}" class="nav-link">
+                            <a href="{{ route('master.staff.index') }}" class="nav-link {{ $sub == 'staff' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Staff</p>
                             </a>
