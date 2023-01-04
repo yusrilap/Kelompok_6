@@ -10,9 +10,9 @@
     <div class="card-header with-border pl-0 pb-1">
         <span class="col-form-label text-bold">POSITION</span>
     </div>
-    <br> 
+    <br>
     <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Nama <span class="text-danger">*</span></label> 
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Nama <span class="text-danger">*</span></label>
         <div class="col-12 col-md-5 col-lg-5">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $position->name ?? '') }}" placeholder="Name.." autocomplete="off">
             @error('name')
@@ -20,7 +20,7 @@
                     <strong>{{ $errors->first('name') }}</strong>
                 </span>
             @enderror
-        </div> 
+        </div>
     </div>
     <div class="form-group row">
         <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Salary</label>
@@ -36,11 +36,11 @@
                     <strong>{{ $errors->first('salary') }}</strong>
                 </span>
             @enderror
-        </div> 
-    </div> 
+        </div>
+    </div>
 
     <div class="form-group row">
-        <label class="col-12 col-md-4 col-xs-4 col-form-label">Status</label> 
+        <label class="col-12 col-md-4 col-xs-4 col-form-label">Status</label>
         <div class="col-12 col-md-5 col-lg-5">
             <select name="status" class="form-control select2 @error('status') is-invalid @enderror">
                 <option value="">Pilih</option>
@@ -52,13 +52,13 @@
                     <strong>{{ $errors->first('status') }}</strong>
                 </span>
             @enderror
-        </div> 
-    </div>     
+        </div>
+    </div>
 </div>
 <div class="card-footer">
     <div class="offset-md-4">
         <div class="form-group mb-0">
-            <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button> 
+            <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button>
             <button type="reset" class="btn btn-secondary"><i class="fas fa-undo mr-1"></i> Reset</button>
         </div>
     </div>

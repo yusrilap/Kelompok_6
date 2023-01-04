@@ -58,7 +58,7 @@
                 @endif
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('schedule.index') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-calendar"></i>
                         <p>Schedule</p>
                     </a>
