@@ -44,54 +44,33 @@ class ScheduleController extends Controller
         return redirect()->route('schedule.index')->with($message);
     }
 
-    public function edit(Staff $staff)
+    public function edit(Schedule $schedule)
     {
-        $data['title'] = 'Edit Staff';
-        $data['staff'] = $staff;
-        $data['position'] = Position::all();
-        $data['departement'] = Departement::all();
-        $data['roles'] = Roles::all();
-        return view('master.staff.edit', $data);
+        $data['title'] = "Edit schedule";
+        $data['staff'] = Staff::all();
+        $value = new Keterangan();
+        $data['ket_schedule'] = $value->ket_schedule;
+        $data['status'] = $value->status;
+        $data['schedule'] = $schedule;
+        return view('schedule.edit', $data);
     }
 
-    public function update(Request $request, Staff $staff)
+    public function update(Request $request, Schedule $schedule)
     {
         $request->validate([
-            'name'=>'required|max:100',
-            'birth'=>'required|date',
-            'startdate'=>'required|date',
-            'phone'=>'required|max:13',
-            'position_id'=>'required',
-            'departement_id'=>'required',
-            'addres'=>'required',
+            'staff_id'=>'required',
+            'tgl_masuk'=>'required|date',
+            'ket_schedule'=>'required',
+            // 'status'=>'required',
         ]);
 
-        if ($request->has('makeUserAccount')) {
-            $msg = [
-                'username.min' => 'Username harus terdiri dari minimal 6 karakter.',
-                'username.unique' => 'Username sudah digunakan.'
-            ];
-            $request->validate([
-                'username' => 'required|string|min:6|max:255|unique:users',
-                'role_id' => 'required|integer',
-            ], $msg);
-
-            $user = Users::create([
-                'name' => $request->name,
-                'username' => $request->username,
-                'password' => bcrypt($request->username),
-                'role_id' => $request->role_id
-            ]);
-            $request->request->add(['users_id' => $user->id]);
-        }
-
-        $staff->update($request->all());
+        $schedule->update($request->all());
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data staff updated successfully'
+            'message'=> 'Data schedule updated successfully'
         ];
-        return redirect()->route('master.staff.index')->with($message);
+        return redirect()->route('schedule.index')->with($message);
     }
 
     public function destroy(Request $request)
@@ -99,16 +78,16 @@ class ScheduleController extends Controller
         $id = $request->id;
         if($id)
         {
-            $staff = Staff::find($id);
-            if($staff)
+            $schedule = Schedule::find($id);
+            if($schedule)
             {
-                $staff->delete();
+                $schedule->delete();
             }
-            $count = Staff::count();
+            $count = Schedule::count();
             $message = [
                 'alert-type' => 'success',
                 'count' => $count,
-                'message' => 'Data staff deleted successfully.'
+                'message' => 'Data schedule deleted successfully.'
             ];
             return response()->json($message);
         }
