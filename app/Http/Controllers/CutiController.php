@@ -90,5 +90,49 @@ class CutiController extends Controller
         $data['cuti'] = $cuti;
         return view('cuti.edit', $data);
     }
+        public function update(Request $request, cuti $cuti)
+    {
+        $request->validate([
+            'staff_id'=>'required',
+            'estimasi'=>'required',
+            'keterangan'=>'required',
+        ]);
+
+        $estimasi = explode(" ", $request->estimasi);
+        $started_at = date('Y-m-d', strtotime($estimasi[0]));
+        $finished_at = date('Y-m-d', strtotime($estimasi[2]));
+
+        $startTimeStamp = strtotime($started_at);
+        $endTimeStamp = strtotime($finished_at);
+        $timeDiff = abs($endTimeStamp - $startTimeStamp);
+        $numberDays = $timeDiff/86400;  // 86400 hitungan per hari
+        // konversi ke bilangan
+        $numberDays = intval($numberDays);
+
+        $request->request->add([
+            'tgl_mulai' => $started_at,
+            'tgl_selesai' => $finished_at,
+            'jumlah_cuti' => $numberDays
+        ]);
+
+        if($numberDays > 30)
+        {
+            $message = [
+                'alert-type'=>'error',
+                'message'=> 'Permohonan cuti ('.$numberDays.' hari) melebihi durasi yang dizinkan. Durasi cuti maksimal 30 hari'
+            ];  
+        }
+        else
+        {
+            $cuti->update($request->all());
+            $message = [
+                'alert-type'=>'success',
+                'message'=> 'permohonan cuti updated successfully'
+            ];   
+        }
+
+       
+        return redirect()->route('cuti.index')->with($message);
+    }
 
 }
