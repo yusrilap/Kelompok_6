@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('cuti.index') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-calendar"></i>
                         <p>Permohonan Cuti</p>
                     </a>
