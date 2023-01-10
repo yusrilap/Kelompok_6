@@ -26,4 +26,11 @@ class CutiController extends Controller
             return view('cuti.index', $data);
         }
     }
+
+    public function create()
+    {
+        $data['title'] = "Buat cuti";
+        $data['staff'] = Staff::all();
+        return view('cuti.create', $data);
+    }
 }
