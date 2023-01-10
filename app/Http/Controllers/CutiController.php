@@ -153,5 +153,18 @@ class CutiController extends Controller
             return response()->json($message);
         }
     }
-
+    public function validasi($id, Request $request)
+    {
+        $cuti = Cuti::find($id);
+        if ($request->has('validasi')) {
+            $cuti->update([
+                'status' => $request->validasi
+            ]);
+        }
+        $message = [
+            'alert-type' => 'success',
+            'message' => 'permohonan cuti berhasil di-verifikasi.'
+        ];
+        return redirect()->back()->with($message);
+    }
 }
