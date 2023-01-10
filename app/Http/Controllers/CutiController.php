@@ -134,5 +134,24 @@ class CutiController extends Controller
        
         return redirect()->route('cuti.index')->with($message);
     }
+    public function destroy(Request $request)
+    {
+        $id = $request->id;
+        if($id)
+        {   
+            $cuti = Cuti::find($id);
+            if($cuti)
+            {
+                $cuti->delete();
+            }
+            $count = Cuti::count();
+            $message = [
+                'alert-type' => 'success',
+                'count' => $count,
+                'message' => 'Data cuti deleted successfully.'
+            ];
+            return response()->json($message);
+        }
+    }
 
 }
