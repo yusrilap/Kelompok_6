@@ -82,4 +82,13 @@ class CutiController extends Controller
         
         return redirect()->route('cuti.index')->with($message);
     }
+
+    public function edit(cuti $cuti)
+    {
+        $data['title'] = "Edit cuti";
+        $data['staff'] = Staff::all();
+        $data['cuti'] = $cuti;
+        return view('cuti.edit', $data);
+    }
+
 }
